@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="{% static 'hospital/style.css' %}">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>🏥 Hospital Management System</h1>
+        <p>Patient Management Dashboard</p>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Welcome</h2>
+
+            <p>Manage patient records easily and efficiently.</p>
+
+            <h3>Total Patients</h3>
+            <h2>{{ total_patients }}</h2>
+
+            <h3>Male Patients</h3>
+            <h2>{{ male_patients }}</h2>
+
+            <h3>Female Patients</h3>
+            <h2>{{ female_patients }}</h2>
+
+            <a href="{% url 'register_patient' %}">
+                <button class="btn-primary">Register Patient</button>
+            </a>
+
+            <a href="{% url 'patient_list' %}">
+                <button class="btn-success">View Patients</button>
+            </a>
+            <br><br>
+
+<a href="{% url 'logout' %}">
+    <button>Logout</button>
+</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
